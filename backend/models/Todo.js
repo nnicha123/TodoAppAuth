@@ -4,7 +4,7 @@ module.exports = (sequelize,DataTypes) => {
             type:DataTypes.STRING(1000)
         },
         status:{
-            type:DataTypes.ENUM('friend','pending','banned')
+            type:DataTypes.ENUM('incomplete','completed')
         }
     },{
         tableName:'todos'

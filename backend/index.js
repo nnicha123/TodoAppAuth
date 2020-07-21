@@ -3,6 +3,7 @@ const express = require('express')
 const db = require('./models')
 const cors = require('cors')
 const app = express()
+require('./config/passport/passport')
 
 const userRoute = require('./routes/user')
 const todoRoute = require('./routes/todo')
@@ -15,5 +16,5 @@ app.use('/users',userRoute)
 app.use('/todos',todoRoute)
 
 db.sequelize.sync().then(() => {
-    app.listen(Number(process.env.PORT),() => console.log('Listening on port 8000'))
+    app.listen(Number(process.env.PORT),() => console.log(`Listening on port ${process.env.PORT}`))
 })
