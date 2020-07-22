@@ -5,7 +5,7 @@
     justify-content: center;
     margin: 35px;
 }
-.todoItems,.todoItemsAdd{
+.todoItems,.todoItemsAdd,.todoItemsEdit{
     margin: 25px;
     padding: 20px;
     height: 250px;
@@ -15,7 +15,11 @@
     font-size: 18px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     color: gray;
+}
+.todoItemsEdit{
+    z-index: 100;
 }
 .todoItemsAdd{
     margin: 0;
@@ -35,17 +39,18 @@
 .todoItems h3{
     letter-spacing: 2px;
 }
-.todoItems button,.todoItemsAdd button{
+.todoItems button,.todoItemsAdd button, .todoItemsEdit button{
     margin-top: 25px;
     padding: 10px 0;
     border: none;
-    background-color: rgb(114, 192, 131);
+    background-color: rgb(236, 214, 117);
     color: white;
     border-radius: 5px;
     outline: none;
 }
-.todoItems button:hover,.todoItemsAdd button:hover{
-    background-color: rgb(4, 144, 34);
+
+.todoItems button:hover{
+    background-color: rgb(211, 177, 27);
     cursor: pointer;
 }
 .todoItemsAdd button{
@@ -55,11 +60,12 @@
 .todoItems > *{
     padding-left: 10px;
 }
-.todoItems .EditButton{
-    background-color: rgb(236, 214, 117);
+.todoItems .EditButton,.todoItemsAdd button{
+    background-color: rgb(114, 192, 131);
+
 }
-.todoItems .EditButton:hover{
-    background-color: rgb(211, 177, 27);
+.todoItems .EditButton:hover,.todoItemsAdd button:hover{
+    background-color: rgb(4, 144, 34);
 }
 .addTodo{
     margin: 15px;
