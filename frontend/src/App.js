@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import TodoList from './TodoList'
+import axios from './config/axios'
+import Login from './Login'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  state = {
+    todo : []
+  }
+  componentDidMount = () => {
+    axios.get('http://localhost:8000/todos/').then(res => console.log(res.data))
+  }
+  render() {
+    return (
+      <div>
+        <Login/>
+        {/* <TodoList/> */}
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
