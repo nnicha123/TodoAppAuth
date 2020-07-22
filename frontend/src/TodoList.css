@@ -1,0 +1,43 @@
+.todoWrapper{
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    margin: 35px;
+}
+.todoItems{
+    margin: 25px;
+    padding: 20px;
+    height: 200px;
+    width: 200px;
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.3);
+    list-style: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    color: gray;
+}
+.todoItems h3{
+    letter-spacing: 2px;
+}
+.todoItems button{
+    margin-top: 25px;
+    padding: 10px 0;
+    border: none;
+    background-color: rgb(114, 192, 131);
+    color: white;
+    border-radius: 5px;
+}
+.todoItems button:hover{
+    background-color: rgb(4, 144, 34);
+    cursor: pointer;
+}
+
+.todoItems > *{
+    padding-left: 10px;
+}
+.todoItems .EditButton{
+    background-color: rgb(236, 214, 117);
+}
+.todoItems .EditButton:hover{
+    background-color: rgb(211, 177, 27);
+}

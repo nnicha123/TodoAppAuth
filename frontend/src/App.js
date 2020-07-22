@@ -21,6 +21,7 @@ export class App extends Component {
         <Router className="router">
           <Route exact path='/' component={Login} />
           <Route exact path='/profile' component={User} />
+          <Route exact path='/todo' component={TodoList}/>
         </Router>
 
       </div>

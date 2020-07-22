@@ -9,10 +9,12 @@ function Login() {
     const sendUser = (username,password) => {
         axios.post('http://localhost:8000/users/login',{username,password}).then(res => {
             LocalStorageService.setToken(res.data.token)
+            LocalStorageService.setId(res.data.id)
             setUsername('')
             setPassword('')
+            window.location.replace('/profile')
         })
-        LocalStorageService.setToken()
+        
     }
     return (
         <div className="outerLogin">
