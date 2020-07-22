@@ -8,7 +8,7 @@ export class App extends Component {
     todo : []
   }
   componentDidMount = () => {
-    axios.get('http://localhost:8000/todos/').then(res => console.log(res.data))
+    // axios.get('http://localhost:8000/todos/').then(res => console.log(res.data))
   }
   render() {
     return (
