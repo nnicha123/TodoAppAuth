@@ -32,7 +32,7 @@ function Login() {
                 </div>
                 <div className="button-group">
                     <button onClick={() => sendUser(username,password)}>Submit</button>
-                    <button >Register</button>
+                    <button onClick={() => window.location.replace('/register')}>Register</button>
                 </div>
 
             </div>

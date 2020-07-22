@@ -25,12 +25,17 @@ const loginUser = async(req,res) => {
                 id: validUser.id
             }
             const jwtToken = jwt.sign(payload,process.env.SECRET_OR_KEY,{expiresIn:3600})
-            res.status(200).send({message:'Successfully logged in',token:jwtToken})
+            res.status(200).send({message:'Successfully logged in',token:jwtToken,id:validUser.id})
         }
         else res.status(400).send({message:'Incorrect username or password'})
     }
 }
-
+const getUserInfo = async(req,res) => {
+    const targetId = req.params.id
+    const user = await db.User.findOne({where:{id:targetId}})
+    if(user) {res.status(200).send(user)}
+    else res.status(400).send({message:'Cannot find user'})
+}
 module.exports = {
-    registerUser,loginUser
+    registerUser,loginUser,getUserInfo
 }
