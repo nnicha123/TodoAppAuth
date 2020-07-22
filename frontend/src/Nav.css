@@ -1,0 +1,15 @@
+nav{
+    background-color: rgb(175, 175, 175);
+}
+nav li{
+    list-style-type: none;
+    padding: 20px;
+    width: max-content;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+nav li:hover{
+    background-color: grey;
+    cursor: pointer;
+}
