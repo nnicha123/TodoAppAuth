@@ -6,7 +6,7 @@ function TodoList() {
     const [todo, setTodo] = useState([])
     const [add, setAdd] = useState(false)
     const [newTodo, setNewTodo] = useState('')
-    const [createTodo, setCreateTodo] = useState({})
+
     useEffect(() => {
         axios.get('http://localhost:8000/todos').then(res => {
             setTodo(res.data)
@@ -44,6 +44,7 @@ function TodoList() {
     return (
         <div>
             {!add && <button className="addTodo" onClick={() => addTodo()}>Add Todo</button>}
+            {(todo.length == 0) && !add && <div className="noTodo">You currently have no todos!</div>}
             {!add && <div className="todoWrapper">
                 {todo.map((el, index) => {
                     return (

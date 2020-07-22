@@ -27,7 +27,7 @@ function Login() {
                 </div>
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="text" onChange={(e) => setPassword(e.target.value)}
+                    <input type="password" onChange={(e) => setPassword(e.target.value)}
                     value={password}/>
                 </div>
                 <div className="button-group">
