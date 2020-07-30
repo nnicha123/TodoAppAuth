@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from './config/axios'
 import './TodoList.css'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function TodoList() {
     const [todo, setTodo] = useState([])
@@ -12,6 +14,7 @@ function TodoList() {
     useEffect(() => {
         axios.get('http://localhost:8000/todos').then(res => {
             setTodo(res.data)
+            toast.success('Here\'s your todo list!', { position: toast.POSITION.RIGHT, autoClose: false })
             console.log(res.data.length)
             let editData = []
             for (let i = 0; i < res.data.length; i++) {
@@ -59,13 +62,14 @@ function TodoList() {
     const editingTodo = (index) => {
         editing[index] = true
         setEditedTodo(todo[index].title)
-        console.log(editing,index)
+        console.log(editing, index)
     }
     const updateTodo = (index) => {
         console.log(index)
         axios.put('http://localhost:8000/todos/' + todo[index].id, { title: editedTodo, status: 'incomplete' }).then(res => {
             axios.get('http://localhost:8000/todos').then(res => {
                 setTodo(res.data)
+                toast.success('Successfully Updated', { position: toast.POSITION.RIGHT, autoClose: false })
             })
         })
         editing[index] = false
